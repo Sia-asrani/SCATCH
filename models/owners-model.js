@@ -3,7 +3,7 @@
 
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost.27017/scatch");
+mongoose.connect("mongodb://localhost:27017/scatch");
 
 const ownerSchema = mongoose.Schema({
     fullname: {
@@ -14,7 +14,7 @@ const ownerSchema = mongoose.Schema({
     email: String,
     password: String,
     products: {
-        tyep:Array, default:[]
+        type:Array, default:[]
     },
     gstin: String,
     picture: String

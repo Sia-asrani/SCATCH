@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
+mongoose.connect("mongodb://localhost:27017/scatch");
+
 const productSchema = mongoose.Schema({
-    image: String,
+    image: Buffer, //hex value
     name: String,
     price: Number,
     discount: {

@@ -1,17 +1,28 @@
 const mongoose = require("mongoose");
 
+mongoose.connect("mongodb://localhost:27017/scatch");
+
 const userSchema = mongoose.Schema({
     fullname: {
         type:String,
         trim: true,
-        minLength: 3
+        minLength: 3,
+        required: true
     },
-    email: String,
-    password: String,
-    cart: {
-        type:Array, default: []
+    email: {
+        type: String, 
+        required:true,
+        unique: true
     },
-    isAdmin: Boolean,
+    password: {
+        type:String, 
+        required:true
+    },
+    cart: [
+        {
+        type:mongoose.Schema.Types.ObjectId, 
+        ref: "product",
+    }],
     orders:{
         type: Array, default:[]
     },
