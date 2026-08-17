@@ -61,7 +61,7 @@ module.exports.loginUser = async function (req, res){
             res.redirect("/shop");
         }
         else{
-            //wrong password
+            //Handling wrong password
             res.send("Email or password incorrect");
         }
     });
